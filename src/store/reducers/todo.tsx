@@ -19,7 +19,7 @@ export const todoReducer = createSlice({
         id: state.todoHistory.length + 1,
         color: getRandomColor(),
       };
-      state.todoHistory = [...state.todoHistory,  newItem]
+      state.todoHistory.unshift(newItem);
     },
     setDeleteTodo: (state, action) => {
       state.todoHistory.pop();
